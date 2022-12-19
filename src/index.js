@@ -19,11 +19,11 @@ import { disableReactDevTools } from '@fvilers/disable-react-devtools'
 // const app = express();
 // let NODE_ENV=development
 
-if (process.env.NODE_ENV === 'production') disableReactDevTools()
+if (process.env.NODE_ENV === 'production') {disableReactDevTools()
 
-//   app.use(express.static('frontend/build'));
-//   app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')));
-// }
+app.use(express.static('frontend/build'));
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')));
+}
 
 const store = configureStore({
     reducer: {
