@@ -83,7 +83,7 @@ export default function Individual() {
               <div
                 className="imgContainer"
                 style={{
-                  backgroundImage: `url(${data.imgUrl})`,
+                  backgroundImage: `url(${data?.imgUrl})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center center",
                   backgroundSize: "70% 80%",
@@ -97,19 +97,19 @@ export default function Individual() {
               </div>
             </div>
             <div className="inTextContainer col-lg-6 col-md-6 col-sm-12">
-              <h1 className="inTitle">{data.name}</h1>
+              <h1 className="inTitle">{data?.name}</h1>
               <div className="bigDiv">
                 <div className="smallDiv">
                   <p
-                    className={data.matchId === "0" ? "descPara" : "customPara"}
+                    className={data?.matchId === "0" ? "descPara" : "customPara"}
                   >
-                    {data.description}
+                    {data?.description}
                   </p>
                 </div>
               </div>
               <div className="middleContainer">
                 <div className="priceSection">
-                  <p className="price">${data.price}</p>
+                  <p className="price">${data?.price}</p>
                   <div className="addSection">
                     <RemoveCircleIcon
                       className="remove"
@@ -131,14 +131,14 @@ export default function Individual() {
                   Add to Cart
                 </button>{" "}
                 <br />
-                {auth._id && data.matchId === auth._id ? (
+                {auth._id && data?.matchId === auth._id ? (
                   <div className="inBottomButtonsContainer">
                     <button className="inUpdateButton" onClick={updateScreen}>
                       Update
                     </button>
                     <button
                       className="inDeleteButton"
-                      onClick={() => deleteProduct(data._id)}
+                      onClick={() => deleteProduct(data?._id)}
                     >
                       Delete
                     </button>
@@ -149,11 +149,11 @@ export default function Individual() {
           </div>
           <div className="inSectionTwo">
             <div className="imgContainerSection col-lg-6 col-md-6 col-sm-12">
-              <h1 className="inTitle">{data.name}</h1>
+              <h1 className="inTitle">{data?.name}</h1>
               <div
                 className="imgContainer"
                 style={{
-                  backgroundImage: `url(${data.imgUrl})`,
+                  backgroundImage: `url(${data?.imgUrl})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center center",
                   backgroundSize: "60% 70%",
@@ -168,15 +168,15 @@ export default function Individual() {
               <div className="inHiddenBottom">
                 <div className="smallDiv">
                   <p
-                    className={data.matchId === "0" ? "descPara" : "customPara"}
+                    className={data?.matchId === "0" ? "descPara" : "customPara"}
                   >
-                    {data.description}
+                    {data?.description}
                   </p>
                 </div>
                 <div className="priceSection">
                   <div className="firstPrice">
                     <div className="secondPrice">
-                      <p className="price">${data.price}</p>
+                      <p className="price">${data?.price}</p>
                       <div className="addSection">
                         <RemoveCircleIcon
                           className="remove"
@@ -198,7 +198,7 @@ export default function Individual() {
                       Add to Cart
                     </button>{" "}
                     <br />
-                    {auth._id && data.matchId === auth._id ? (
+                    {auth._id && data?.matchId === auth._id ? (
                       <div className="inBottomButtonsContainer">
                         <button
                           className="inUpdateButton"
@@ -208,7 +208,7 @@ export default function Individual() {
                         </button>
                         <button
                           className="inDeleteButton"
-                          onClick={() => deleteProduct(data._id)}
+                          onClick={() => deleteProduct(data?._id)}
                         >
                           Delete
                         </button>
