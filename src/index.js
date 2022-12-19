@@ -14,16 +14,16 @@ import buildReducer from './features/buildSlice';
 import updateReducer from './features/updateSlice';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools'
 // require("dotenv").config();
-const express = require('express');
-const path = require('path');
-const app = express();
-let NODE_ENV=development
+// const express = require('express');
+// const path = require('path');
+// const app = express();
+// let NODE_ENV=development
 
-if (process.env.NODE_ENV === 'production') {disableReactDevTools()
+if (process.env.NODE_ENV === 'production') disableReactDevTools()
 
-app.use(express.static('frontend/build'));
-app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')));
-}
+// app.use(express.static('frontend/build'));
+// app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html')));
+// }
 
 const store = configureStore({
     reducer: {
