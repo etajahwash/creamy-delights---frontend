@@ -13,11 +13,11 @@ import authReducer, { loadUser } from './features/authSlice';
 import buildReducer from './features/buildSlice';
 import updateReducer from './features/updateSlice';
 import { disableReactDevTools } from '@fvilers/disable-react-devtools'
-// // require("dotenv").config();
-// const express = require('express');
-// const path = require('path');
-// const app = express();
-// let NODE_ENV=development
+// require("dotenv").config();
+const express = require('express');
+const path = require('path');
+const app = express();
+let NODE_ENV=development
 
 if (process.env.NODE_ENV === 'production') {disableReactDevTools()
 
