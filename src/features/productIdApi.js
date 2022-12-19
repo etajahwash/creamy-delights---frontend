@@ -1,9 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { url } from './api';
 
 export const productIdApi = createApi({
     reducerPath: 'productIdApi',
-    baseQuery: fetchBaseQuery({ baseUrl: url }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://creamy-delights-api.onrender.com/api' }),
     endpoints: (builder) => ({
         getProductById: builder.query({
             query: (id) => `products/${id}`,
