@@ -60,7 +60,7 @@ export default function Update() {
           {" "}
           <div className="theHidden">
             {updateFlavor.name === ""
-              ? (updateFlavor.name = `${data.name}`)
+              ? (updateFlavor.name = `${data?.name}`)
               : null}
           </div>
           <div className="updateWrapper">
@@ -110,7 +110,7 @@ export default function Update() {
                               name: e.target.value,
                             })
                           }
-                          placeholder={data.name}
+                          placeholder={data?.name}
                           className="updateNameInput"
                         />
                       </div>
@@ -416,7 +416,7 @@ export default function Update() {
                   </div>
                   <p>{update.updatePError}</p>
                   <button
-                    onClick={() => submitUpdate(data._id)}
+                    onClick={() => submitUpdate(data?._id)}
                     className="updateSubmitButton"
                   >
                     Submit
