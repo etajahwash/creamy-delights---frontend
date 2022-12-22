@@ -32,7 +32,7 @@ export default function Update() {
     }
   }
 
-  function submitUpdate(id) {
+  function submitUpdate() {
     axios.put(`${url}/products/update/${id}`, {
       id: id,
       name: updateFlavor.name,
