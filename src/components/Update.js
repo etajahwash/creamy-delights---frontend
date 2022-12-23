@@ -26,10 +26,10 @@ export default function Update() {
 
   function handleProductSubmit(e) {
     e.preventDefault();
-    if (updateFlavor.toppings !== "") {
-      navigate(`/menu/${id}`);
-      window.location.reload();
-    }
+    // if (updateFlavor.toppings !== "") {
+    //   navigate(`/menu/${id}`);
+    //   window.location.reload();
+    // }
   }
 
   function submitUpdate() {
@@ -41,6 +41,8 @@ export default function Update() {
       description: updateFlavor.description,
     });
   }
+
+  console.log(updateFlavor)
 
   return (
     <div
