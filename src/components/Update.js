@@ -33,13 +33,21 @@ export default function Update() {
   }
 
   function submitUpdate() {
-    axios.put(`${url}/products/update/${id}`, {
+
+      axios.put(`${url}/products/update/${id}`, {
       id: id,
       name: updateFlavor.name,
       flavor: updateFlavor.flavor,
       toppings: updateFlavor.toppings,
       description: updateFlavor.description,
-    });
+    })
+
+    setTimeout(() => {
+    if(updateFlavor.name !== '' && updateFlavor.toppings !== '') {
+        navigate(`/menu/${id}`);
+        window.location.reload();
+    }
+  }, '200')
   }
 
   console.log(updateFlavor)
