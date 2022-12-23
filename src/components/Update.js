@@ -26,13 +26,13 @@ export default function Update() {
 
   function handleProductSubmit(e) {
     e.preventDefault();
-    // if (updateFlavor.toppings !== "") {
-    //   navigate(`/menu/${id}`);
-    //   window.location.reload();
-    // }
   }
 
   function submitUpdate() {
+
+    if(updateFlavor.flavor === 'undefined') {
+      updateFlavor.flavor = 'Vanilla'
+    }
 
       axios.put(`${url}/products/update/${id}`, {
       id: id,
@@ -49,8 +49,6 @@ export default function Update() {
     }
   }, '200')
   }
-
-  console.log(updateFlavor)
 
   return (
     <div
