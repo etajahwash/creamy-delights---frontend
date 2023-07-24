@@ -492,7 +492,7 @@
 
 }
 
-@media screen and (min-width: 395px) and (max-width: 550px) and (max-height: 790px) and (min-height:740px) {
+@media screen and (min-width: 395px) and (max-width: 550px) and (max-height: 790px) and (min-height:640px) {
     .priceSection {
         margin-left: 2.2rem;
         margin-top: 0rem;
