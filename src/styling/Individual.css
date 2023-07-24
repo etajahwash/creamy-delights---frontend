@@ -492,7 +492,7 @@
 
 }
 
-@media screen and (min-width: 395px) and (max-width: 550px) and (max-height: 790px) and (min-height:640px) {
+@media screen and (min-width: 395px) and (max-width: 550px) and (max-height: 790px) and (min-height:740px) {
     .priceSection {
         margin-left: 2.2rem;
         margin-top: 0rem;
@@ -593,7 +593,7 @@
 }
 
 
-@media screen and (min-width: 388px) and (max-width: 394px) and (max-height: 950px) and (min-height:740px) {
+@media screen and (min-width: 388px) and (max-width: 394px) and (max-height: 950px) and (min-height:640px) {
     .priceSection {
         margin-left: 1.6rem;
         margin-top: 0rem;
