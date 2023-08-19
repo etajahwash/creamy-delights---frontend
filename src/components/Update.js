@@ -26,20 +26,28 @@ export default function Update() {
 
   function handleProductSubmit(e) {
     e.preventDefault();
-    if (updateFlavor.toppings !== "") {
-      navigate(`/menu/${id}`);
-      window.location.reload();
-    }
   }
 
-  function submitUpdate(id) {
-    axios.put(`${url}/products/update/${id}`, {
+  function submitUpdate() {
+
+    if(updateFlavor.flavor === 'undefined') {
+      updateFlavor.flavor = 'Vanilla'
+    }
+
+      axios.put(`${url}/products/update/${id}`, {
       id: id,
       name: updateFlavor.name,
       flavor: updateFlavor.flavor,
       toppings: updateFlavor.toppings,
       description: updateFlavor.description,
-    });
+    })
+
+    setTimeout(() => {
+    if(updateFlavor.name !== '' && updateFlavor.toppings !== '') {
+        navigate(`/menu/${id}`);
+        window.location.reload();
+    }
+  }, '200')
   }
 
   return (
@@ -60,7 +68,7 @@ export default function Update() {
           {" "}
           <div className="theHidden">
             {updateFlavor.name === ""
-              ? (updateFlavor.name = `${data.name}`)
+              ? (updateFlavor.name = `${data?.name}`)
               : null}
           </div>
           <div className="updateWrapper">
@@ -110,7 +118,7 @@ export default function Update() {
                               name: e.target.value,
                             })
                           }
-                          placeholder={data.name}
+                          placeholder={data?.name}
                           className="updateNameInput"
                         />
                       </div>
@@ -416,7 +424,7 @@ export default function Update() {
                   </div>
                   <p>{update.updatePError}</p>
                   <button
-                    onClick={() => submitUpdate(data._id)}
+                    onClick={() => submitUpdate(data?._id)}
                     className="updateSubmitButton"
                   >
                     Submit

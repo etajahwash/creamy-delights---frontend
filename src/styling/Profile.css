@@ -41,10 +41,6 @@
   border-radius: 50px;
 }
 
-.profilePic:hover {
-  /* margin-left: 2rem; */
-}
-
 .logOutText {
   text-align: center;
   margin-left: 1.05rem;
@@ -188,14 +184,8 @@
   border-radius: 20px;
 }
 
-.pOrdersDate {
-}
-
 .pOrdersName {
   width: 12rem;
-}
-
-.pOrdersQty {
 }
 
 .pOrdersPrice {
@@ -277,6 +267,10 @@
 @media screen and (max-width: 728px) {
   .profilePicContainer {
     margin-left: 26rem;
+  }
+
+  .profileSection {
+    padding-bottom: 3rem;
   }
 }
 
