@@ -7,8 +7,9 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useGetProductByIdQuery } from "../features/productIdApi";
 import { useParams } from "react-router-dom";
-import { url } from "../features/api";
 import axios from "axios";
+const backendUpdAPI = process.env.REACT_APP_API_URL;
+
 
 export default function Update() {
   const { id } = useParams();
@@ -34,7 +35,7 @@ export default function Update() {
       updateFlavor.flavor = 'Vanilla'
     }
 
-      axios.put(`${url}/products/update/${id}`, {
+      axios.put(`${backendUpdAPI}/products/update/${id}`, {
       id: id,
       name: updateFlavor.name,
       flavor: updateFlavor.flavor,

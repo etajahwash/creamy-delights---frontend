@@ -35,12 +35,12 @@ export default function Profile() {
             <div
               className="profilePic"
               style={{
-                backgroundImage: `${function blahhh(event) {URL.createObjectURL(event.target.files[0])}}`,
+                backgroundImage: `${function bgImages(event) {URL.createObjectURL(event.target.files[0])}}`,
                 backgroundSize: "100% 100%",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
               }}
-              onChange="blahhh(event)"
+              onChange="bgImages(event)"
               onClick={handleAlert}
               onMouseOut={profileShow => setProfileShow(false)}
               onMouseOver={profileShow => setProfileShow(true)}

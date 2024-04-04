@@ -283,7 +283,6 @@
     .customPara {
         margin: 0;
         padding: 0;
-        /* padding: 2rem 0rem; */
         padding-top: 2rem;
         color: blue;
     }
@@ -299,18 +298,22 @@
     }
 }
 
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 669px) {
     .inHiddenBottom {
         display: initial;
     }
 
     .imgContainer {
-        margin-top: -18rem;
+        margin-left: 6rem;
+        margin-top: -6rem;
+        width: 25rem;
+        height: 25rem;
+        display: none;
     }
 
     .priceSection {
         margin-left: 9.5rem;
-        margin-top: -26rem;
+        margin-top: -0.5rem;
     }
 
     .smallDiv {

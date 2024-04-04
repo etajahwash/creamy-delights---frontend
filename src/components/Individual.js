@@ -16,8 +16,8 @@ import {
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { url } from "../features/api";
 import { toast } from "react-toastify";
+const backendIndAPI = process.env.REACT_APP_API_URL;
 
 export default function Individual() {
   let cart = useSelector((state) => state.cart);
@@ -46,7 +46,7 @@ export default function Individual() {
 
   const deleteProduct = (id) => {
     axios
-      .delete(`${url}/products/delete/${id}`)
+      .delete(`${backendIndAPI}/products/delete/${id}`)
       .then((res) => null)
       .catch((error) => console.log(error));
     navigate("/menu");
