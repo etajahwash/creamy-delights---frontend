@@ -68,14 +68,16 @@ export default function Individual() {
         backgroundImage: `url(${dots})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",
-        // objectFit: 'cover',
         backgroundColor: "lavender",
       }}
     >
       {isLoading ? (
         <p className="loading">...Loading</p>
       ) : error ? (
-        <p>An error occurred</p>
+        <>
+        <p className="errorLoad">An error occurred</p>
+        <p className="errorLoad smallerError">please refresh the page</p>
+        </>
       ) : (
         <>
           <div className="inSectionOne">
@@ -148,7 +150,7 @@ export default function Individual() {
             </div>
           </div>
           <div className="inSectionTwo">
-            <div className="imgContainerSection col-lg-6 col-md-6 col-sm-12">
+            <div className="imgContainerSection col-lg-6 col-md-12 col-sm-12">
               <h1 className="inTitle">{data?.name}</h1>
               <div
                 className="imgContainer"
