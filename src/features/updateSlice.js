@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import jwtDecode from 'jwt-decode'
 import axios from 'axios'
-import { url } from './api';
+const backendUpdateAPI = process.env.REACT_APP_API_URL;
 
 const initialState = {
     token: localStorage.getItem('token'),
@@ -23,7 +23,7 @@ export const updateAProduct = createAsyncThunk(
     'update/updateAProduct',
     async (updateP, {rejectWithValue}) => {
        try {
-        const token = await axios.put(`${url}/products/update/:id`, {
+        const token = await axios.put(`${backendUpdateAPI}/products/update/:id`, {
             name: updateP.name,
             price: updateP.price,
             flavor: updateP.flavor,

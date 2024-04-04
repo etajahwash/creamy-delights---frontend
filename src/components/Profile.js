@@ -1,8 +1,10 @@
 import "../styling/Profile.css";
 import profilebg from "../imgs/profilebg5.jpg";
 import miniprofile from "../imgs/miniprofile.jpg";
+import cam from "../imgs/cam.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import { logoutUser } from "../features/authSlice";
 import { toast } from "react-toastify";
 import { useGetAllProductsQuery } from "../features/productsApi";
@@ -10,11 +12,11 @@ import { useGetAllProductsQuery } from "../features/productsApi";
 export default function Profile() {
   const dispatch = useDispatch();
   const loggedIn = useSelector((state) => state.auth);
-
+  const [profileShow, setProfileShow] = useState(false);
   const { data, isLoading, error } = useGetAllProductsQuery();
 
   function handleAlert() {
-    alert("confirm profile change");
+
   }
   return (
     <div
@@ -33,13 +35,23 @@ export default function Profile() {
             <div
               className="profilePic"
               style={{
-                backgroundImage: `url(${miniprofile})`,
+                backgroundImage: `${function blahhh(event) {URL.createObjectURL(event.target.files[0])}}`,
                 backgroundSize: "100% 100%",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
               }}
+              onChange="blahhh(event)"
               onClick={handleAlert}
-            ></div>
+              onMouseOut={profileShow => setProfileShow(false)}
+              onMouseOver={profileShow => setProfileShow(true)}
+            >
+              <div className={profileShow === false ? 'noProfileShow' : null}>
+              <input type='file' className="profileFile" />
+              <div className="profileOverlay" >
+                <img src={cam} className="cam" alt="cam" />
+              </div>
+              </div>
+            </div>
             <Link to="/">
               <h5
                 className="logOutText"

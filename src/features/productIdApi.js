@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+const backendAPI = process.env.REACT_APP_API_URL;
 
 export const productIdApi = createApi({
     reducerPath: 'productIdApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://creamy-delights-api.onrender.com/api' }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${backendAPI}` }),
     endpoints: (builder) => ({
         getProductById: builder.query({
             query: (id) => `products/${id}`,
