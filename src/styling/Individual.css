@@ -269,7 +269,6 @@
     .imgContainer {
         margin-top: -4rem;
         margin-left: 4rem;
-        /* margin-bottom: ; */
     }
 
     .inBackContainer {
@@ -316,6 +315,10 @@
     .inTitle {
         width: 40rem;
         margin-left: -2.5rem;
+    }
+
+    .imgContainer {
+        margin-bottom: -6.5rem;
     }
 
     .customPara {

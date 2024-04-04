@@ -1,6 +1,6 @@
 import "../styling/Profile.css";
 import profilebg from "../imgs/profilebg5.jpg";
-import miniprofile from "../imgs/miniprofile.jpg";
+import wavieP from "../imgs/wavie.png";
 import cam from "../imgs/cam.png";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,9 +15,6 @@ export default function Profile() {
   const [profileShow, setProfileShow] = useState(false);
   const { data, isLoading, error } = useGetAllProductsQuery();
 
-  function handleAlert() {
-
-  }
   return (
     <div
       className="profileSection"
@@ -35,22 +32,13 @@ export default function Profile() {
             <div
               className="profilePic"
               style={{
-                backgroundImage: `${function bgImages(event) {URL.createObjectURL(event.target.files[0])}}`,
+                backgroundImage: `url(${wavieP})`,
                 backgroundSize: "100% 100%",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
+                objectFit: "contain"
               }}
-              onChange="bgImages(event)"
-              onClick={handleAlert}
-              onMouseOut={profileShow => setProfileShow(false)}
-              onMouseOver={profileShow => setProfileShow(true)}
             >
-              <div className={profileShow === false ? 'noProfileShow' : null}>
-              <input type='file' className="profileFile" />
-              <div className="profileOverlay" >
-                <img src={cam} className="cam" alt="cam" />
-              </div>
-              </div>
             </div>
             <Link to="/">
               <h5

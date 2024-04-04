@@ -19,7 +19,7 @@
   padding-top: 2rem;
   font-size: 45px;
   font-family: "Leckerli One", cursive;
-  color: palevioletred;
+  color: rgb(121, 179, 213);
 }
 
 .profileWrapper {
@@ -31,14 +31,20 @@
   padding-top: 2rem;
   font-size: 45px;
   font-family: "Leckerli One", cursive;
-  color: palevioletred;
+  color: rgb(121, 179, 213);
 }
 
 .profilePic {
-  background-color: aqua;
-  height: 6rem;
-  width: 6rem;
-  border-radius: 50px;
+  height: 5rem;
+  width: 4rem;
+  margin-left: 1rem;
+  animation: wavieP 3s infinite;
+}
+
+@keyframes wavieP {
+  0% { rotate: -20deg; }
+  50% { rotate: 20deg; }
+  100% { rotate: -20deg; }
 }
 
 .logOutText {
@@ -104,7 +110,6 @@
 .orderProductContainer {
   overflow-y: auto;
   height: 24rem;
-  /* width: 30rem; */
 }
 .creationProductContainer::-webkit-scrollbar,
 .orderProductContainer::-webkit-scrollbar {
